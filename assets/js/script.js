@@ -7,7 +7,7 @@ $("#currentDay").text(today)
 // grab value of user text from planner
 
     $(".saveBtn").on("click", function(){
-        var textInput = $(".description").val()
+        var textInput = $(this).parent().prev().children("textarea").val()
         
         console.log(textInput);
 })

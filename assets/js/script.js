@@ -43,40 +43,22 @@ $("#ninthBlock").text(hourBlock)
 
 // grab value of user text from planner
 
-    $(".saveBtn").on("click", function(){
-        var timeInput = $(this).parent().prev().prev().children("p").text()
-        var textInput = $(this).parent().prev().children("textarea").val()
-        
-        console.log(timeInput);
-        console.log(textInput);
+$(".saveBtn").on("click", function () {
+    var timeInput = $(this).parent().prev().prev().children("p").text()
+    var textInput = $(this).parent().prev().children("textarea").val()
 
-// if time and text both have values then save to localStorage
-if (timeInput && textInput){
-    localStorage.setItem(timeInput, textInput);
+    console.log(timeInput);
+    console.log(textInput);
 
-}
+    // if time and text both have values then save to localStorage or retrieve
+    if (timeInput && textInput) {
+        localStorage.setItem(timeInput, textInput);
+    }
+    else {
+        JSON.parse(localStorage.getItem('timeInput'))
+    }
 
- })
-
- //retrieve list from localStorage
- 
- var list = JSON.parse(localStorage.getItem('todolist')) || [];
-
- // Renders our to-dos to the page
- function renderTodos(list) {
-
-   // Iterates over the 'list'
-   for (var i = 0; i < list.length; i++) {
-     // Creates a new variable 'toDoItem' that will hold a "<p>" tag
-     var toDoItem = $('<p>');
-     // Sets the `list` item's value as text of this <p> element
-     toDoItem.text(list[i]);
-
-     // Adds 'toDoItem' to the textarea element
-     $('#textarea').append(toDoItem);
-   }
- }
+})
 
 
- // render our to-dos on page load
- renderTodos(list);
+

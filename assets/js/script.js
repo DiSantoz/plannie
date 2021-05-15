@@ -50,14 +50,23 @@ $(".saveBtn").on("click", function () {
     console.log(timeInput);
     console.log(textInput);
 
-    // if time and text both have values then save to localStorage or retrieve
+    // if time and text both have values then save to localStorage 
     if (timeInput && textInput) {
         localStorage.setItem(timeInput, textInput);
     }
-    else {
-        JSON.parse(localStorage.getItem('timeInput'))
-    }
 
+})
+//retrieve all saved data
+$(function () {
+    $('#to-do-1').text(localStorage.getItem('9 am'))
+    $('#to-do-2').text(localStorage.getItem('10 am'))
+    $('#to-do-3').text(localStorage.getItem('11 am'))
+    $('#to-do-4').text(localStorage.getItem('12 pm'))
+    $('#to-do-5').text(localStorage.getItem('1 pm'))
+    $('#to-do-6').text(localStorage.getItem('2 pm'))
+    $('#to-do-7').text(localStorage.getItem('3 pm'))
+    $('#to-do-8').text(localStorage.getItem('4 pm'))
+    $('#to-do-9').text(localStorage.getItem('5 pm'))
 })
 
 

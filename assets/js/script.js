@@ -4,6 +4,7 @@ var today = moment().format("dddd, MMMM do");
 
 $("#currentDay").text(today)
 
+
 // add time for each slot using moment.js
 var hourBlock = moment("9", "H a").format("H a");
 
@@ -40,6 +41,28 @@ $("#eighthBlock").text(hourBlock)
 var hourBlock = moment("17", "h a").format("h a");
 
 $("#ninthBlock").text(hourBlock)
+
+
+
+
+//add styling to time block if past, present or future
+
+var currentTime = moment().format("h a")
+//hourBlock seems to only display last time block 5 pm, but styling wont apply regardless to textarea
+if (hourBlock < currentTime){
+    $("textarea").addClass= (".past");
+}else if (hourBlock === currentTime){
+    $("textarea").addClass=(".present")
+}else if (hourBlock > currentTime){
+    $("textarea").addClass=(".future")
+}
+console.log(currentTime)
+console.log(hourBlock)
+
+
+
+
+
 
 // grab value of user text from planner
 

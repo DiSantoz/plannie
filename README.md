@@ -2,7 +2,7 @@
 
 ## Description
 
-Plannie, is a daily planner that helps the user better organize their time and manage tasks effortlessly. Plannie will become a daily utility for the average consumer who has too many task with no guidance on how to organize their day efficiently. 
+Plannie, is a daily planner that helps the user better organize their time and manage tasks effortlessly. Plannie will become a daily utility for the average consumer who has too many tasks with no guidance on how to organize their day efficiently. 
 
 Go on and check out :date: :white_check_mark: [Plannie: Simple Scheduler](https://disantoz.github.io/plannie/)! 
 
@@ -16,7 +16,7 @@ Each individual time block allows the user to enter a task and then save the tas
 
 ![alt text](./assets/images/edit.png "Simply click on the text to begin entering new text or edit existing text")
 
-The planner dynamically changes as the day progress. Any time in the past will display a grey color on the time slow, current time slots will be red and tasks in the future will be green.
+The planner dynamically changes as the day progress. Any time in the past will display a grey color on the time slot, current time slots will be red and tasks in the future will be green.
 
 ![alt text](./assets/images/time.png "In this example, the current time is 2PM")
 

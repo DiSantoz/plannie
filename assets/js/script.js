@@ -43,21 +43,23 @@ var hourBlock = moment("17", "h a").format("h a");
 $("#ninthBlock").text(hourBlock)
 
 
-
-
 //add styling to time block if past, present or future
 
 var currentTime = moment().format("h a")
 //hourBlock seems to only display last time block 5 pm, but styling wont apply regardless to textarea
+
+$('.hour').each(function(index, value) {    
+  
 if (hourBlock < currentTime){
-    $("textarea").addClass= (".past");
+    $(".description").addClass("past");
 }else if (hourBlock === currentTime){
-    $("textarea").addClass=(".present")
+    $(".description").addClass("present")
 }else if (hourBlock > currentTime){
-    $("textarea").addClass=(".future")
+    $(".description").addClass("future")
 }
 console.log(currentTime)
-console.log(hourBlock)
+})
+
 
 
 

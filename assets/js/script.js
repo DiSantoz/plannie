@@ -6,63 +6,25 @@ $("#currentDay").text(today)
 
 
 // add time for each slot using moment.js
-var hourBlock = moment("9", "H a").format("H a");
-
-$("#firstBlock").text(hourBlock)
-
-var hourBlock = moment("10", "H a").format("H a");
-
-$("#secondBlock").text(hourBlock)
-
-var hourBlock = moment("11", "H a").format("H a");
-
-$("#thirdBlock").text(hourBlock)
-
-var hourBlock = moment("12", "H a").format("H a");
-
-$("#fourthBlock").text(hourBlock)
-
-var hourBlock = moment("13", "h a").format("h a");
-
-$("#fifthBlock").text(hourBlock)
-
-var hourBlock = moment("14", "h a").format("h a");
-
-$("#sixthBlock").text(hourBlock)
-
-var hourBlock = moment("15", "h a").format("h a");
-
-$("#seventhBlock").text(hourBlock)
-
-var hourBlock = moment("16", "h a").format("h a");
-
-$("#eighthBlock").text(hourBlock)
-
-var hourBlock = moment("17", "h a").format("h a");
-
-$("#ninthBlock").text(hourBlock)
-
+var time = p.attr("data-time");
+var displayTime = parseInt(time);
 
 //add styling to time block if past, present or future
 
-var currentTime = moment().format("h a")
+var currentTime = moment().format("HH")
 //hourBlock seems to only display last time block 5 pm, but styling wont apply regardless to textarea
 
-$('.hour').each(function(index, value) {    
+// $('.hour').each(function(index, value) {    
   
-if (hourBlock < currentTime){
-    $(".description").addClass("past");
-}else if (hourBlock === currentTime){
-    $(".description").addClass("present")
-}else if (hourBlock > currentTime){
-    $(".description").addClass("future")
-}
-console.log(currentTime)
-})
+// if (hourBlock < currentTime){
+//     $(".description").addClass("past");
+// }else if (hourBlock === currentTime){
+//     $(".description").addClass("present")
+// }else if (hourBlock > currentTime){
+//     $(".description").addClass("future")
+// }
 
-
-
-
+// })
 
 
 

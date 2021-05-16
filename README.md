@@ -8,7 +8,19 @@ Go on and check out :date: :white_check_mark: [Plannie: Simple Scheduler](https:
 
 ## Usage
 
+When the user loads Plannie, they are presented with the current date on top and a list of time slots for their work week: 9am-5pm:
 
+![alt text](./assets/images/start.png "Take a look at your daily schedule for the day")
+
+Each individual time block allows the user to enter a task and then save the task to the planner. Don't worry about exiting the browser, the task will be saved to the planner!
+
+![alt text](./assets/images/edit.png "Simply click on the text to begin entering new text or edit existing text")
+
+The planner dynamically changes as the day progress. Any time in the past will display a grey color on the time slow, current time slots will be red and tasks in the future will be green.
+
+![alt text](./assets/images/time.png "In this example, the current time is 2PM")
+
+Please feel free to use this planner in order to better help organize your day! As always, reach out to me if you'd like to see some modifications or updates in the future!
 
 
 ## License

@@ -1,13 +1,13 @@
 // add current date
 
-var today = moment().format("dddd, MMMM do");
+var today = moment().format("dddd, MMMM Do");
 
 $("#currentDay").text(today)
 
 // add current time
 var currentTime = moment().hours()
 
-// verify if current time is past, present, or future
+// convert current time to integar from string
 
 var currentHour = parseInt(currentTime);
 
@@ -29,7 +29,6 @@ $('.time-block').each(function () {
     }
 
 })
-
 
 
 // grab value of user text from planner

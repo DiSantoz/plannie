@@ -62,10 +62,6 @@ console.log(currentTime)
 
 
 
-
-
-
-
 // grab value of user text from planner
 
 $(".saveBtn").on("click", function () {

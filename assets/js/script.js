@@ -4,60 +4,30 @@ var today = moment().format("dddd, MMMM do");
 
 $("#currentDay").text(today)
 
+// add current time
+var currentTime = moment().hours()
 
-// add time for each slot using moment.js
-var hourBlock = moment("9", "H a").format("H a");
+// verify if current time is past, present, or future
 
-$("#firstBlock").text(hourBlock)
-
-var hourBlock = moment("10", "H a").format("H a");
-
-$("#secondBlock").text(hourBlock)
-
-var hourBlock = moment("11", "H a").format("H a");
-
-$("#thirdBlock").text(hourBlock)
-
-var hourBlock = moment("12", "H a").format("H a");
-
-$("#fourthBlock").text(hourBlock)
-
-var hourBlock = moment("13", "h a").format("h a");
-
-$("#fifthBlock").text(hourBlock)
-
-var hourBlock = moment("14", "h a").format("h a");
-
-$("#sixthBlock").text(hourBlock)
-
-var hourBlock = moment("15", "h a").format("h a");
-
-$("#seventhBlock").text(hourBlock)
-
-var hourBlock = moment("16", "h a").format("h a");
-
-$("#eighthBlock").text(hourBlock)
-
-var hourBlock = moment("17", "h a").format("h a");
-
-$("#ninthBlock").text(hourBlock)
-
+var currentHour = parseInt(currentTime);
 
 //add styling to time block if past, present or future
 
-var currentTime = moment().format("h a")
-//hourBlock seems to only display last time block 5 pm, but styling wont apply regardless to textarea
+$('.time-block').each(function () {
 
-$('.hour').each(function(index, value) {    
-  
-if (hourBlock < currentTime){
-    $(".description").addClass("past");
-}else if (hourBlock === currentTime){
-    $(".description").addClass("present")
-}else if (hourBlock > currentTime){
-    $(".description").addClass("future")
-}
-console.log(currentTime)
+    var compareTime = parseInt($(this).attr('id'))
+
+    if (compareTime < currentHour) {
+        $(this).addClass("past");
+    } else if (compareTime === currentHour) {
+        $(this).removeClass("past")
+        $(this).addClass("present")
+    } else if (compareTime > currentHour) {
+        $(this).removeClass("past")
+        $(this).removeClass("present")
+        $(this).addClass("future")
+    }
+
 })
 
 
@@ -68,8 +38,8 @@ $(".saveBtn").on("click", function () {
     var timeInput = $(this).parent().prev().prev().children("p").text()
     var textInput = $(this).parent().prev().children("textarea").val()
 
-    console.log(timeInput);
-    console.log(textInput);
+    // console.log(timeInput);
+    // console.log(textInput);
 
     // if time and text both have values then save to localStorage 
     if (timeInput && textInput) {
@@ -79,13 +49,13 @@ $(".saveBtn").on("click", function () {
 })
 //retrieve all saved data
 $(function () {
-    $('#to-do-1').text(localStorage.getItem('9 am'))
-    $('#to-do-2').text(localStorage.getItem('10 am'))
-    $('#to-do-3').text(localStorage.getItem('11 am'))
-    $('#to-do-4').text(localStorage.getItem('12 pm'))
-    $('#to-do-5').text(localStorage.getItem('1 pm'))
-    $('#to-do-6').text(localStorage.getItem('2 pm'))
-    $('#to-do-7').text(localStorage.getItem('3 pm'))
-    $('#to-do-8').text(localStorage.getItem('4 pm'))
-    $('#to-do-9').text(localStorage.getItem('5 pm'))
+    $('#to-do-1').text(localStorage.getItem('9AM'))
+    $('#to-do-2').text(localStorage.getItem('10AM'))
+    $('#to-do-3').text(localStorage.getItem('11AM'))
+    $('#to-do-4').text(localStorage.getItem('12PM'))
+    $('#to-do-5').text(localStorage.getItem('1PM'))
+    $('#to-do-6').text(localStorage.getItem('2PM'))
+    $('#to-do-7').text(localStorage.getItem('3PM'))
+    $('#to-do-8').text(localStorage.getItem('4PM'))
+    $('#to-do-9').text(localStorage.getItem('5PM'))
 })
